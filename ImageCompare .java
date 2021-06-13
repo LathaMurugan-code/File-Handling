@@ -1,30 +1,37 @@
 package filehandling;
 import java.io.File;
+import java.util.Date;
+import java.util.TreeMap;
 public class ImageCompare {
-	static long mod_date =0;
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		File f = new File("E:\\Engagement pics");
 		File[] files=f.listFiles();
-	
-		for(int i=0;i<files.length;i++)
+		TreeMap <File,Date>t = new TreeMap<File,Date>();
+	     for(File s:files)
 		{
-			String s = g.getName();
-			int dot = s.lastIndexOf(".");
-			String exe=s.substring(dot+1);
-			if(exe.equals("JPG"))
-			{
-			 ;
-				}
+	    	 Date d = new Date(s.lastModified());
+	    	 t.put(s, d);
 			}
-		
-		
-
-	}
+	     System.out.println(t);
+	 	}
 
 }
 
 	
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
